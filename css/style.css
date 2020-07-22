@@ -10,6 +10,7 @@ font-family: "Roboto",sans-serif;
 
 button{
     border:none;
+    outline: none;
 }
 
 .main-header{
@@ -63,27 +64,26 @@ button{
     cursor:pointer;
 }
 
+.header-basket__item a,
 .header-menu__item a{
     color:black;
     text-decoration: none;
 }
 
+.header-basket__item a:hover,
 .header-menu__item a:hover{
 color:rgb(251,86,90);
 }
 
+.header-basket__item a:active,
 .header-menu__item a:active{
     color:rgb(166,166,166);
 }
 
+.header-basket__item a:focus,
 .header-menu__item a:focus{
     box-shadow:0 3px 0 0 rgb(251,86,90);
 }
-
-.header-basket__item a {
-   color: orange;
-}
-
 
 .header-basket{
     display: flex;
@@ -100,10 +100,6 @@ color:rgb(251,86,90);
     text-transform: uppercase;
 }
 
-.header-basket__item a{
-    color:black;
-    text-decoration: none;
-}
 
 .slider{
     width:1160px;
@@ -427,7 +423,6 @@ background-color: rgb(239,200,74);
     min-height:417px;
     width:1440px;
     margin:auto;
-    border:1px solid black;
     position: relative;
 }
 
@@ -436,6 +431,7 @@ background-color: rgb(239,200,74);
     height: inherit;
     position: absolute;
     z-index:1;
+    margin: auto;
 }
 
 .contacts__write{
@@ -463,7 +459,7 @@ background-color: rgb(239,200,74);
 
 }
 
-.contacts__write button{
+.contacts__button{
     font-size:18px;
     line-height:50px;
     border:none;
@@ -473,8 +469,19 @@ background-color: rgb(239,200,74);
     text-transform: uppercase;
     color:white;
     margin-top: 20px;
-    cursor: pointer;
+    cursor:pointer;
 }
+
+.contacts__button:hover{
+    background-color: rgb(231,66,70);
+}
+
+.contacts__button:active{
+    box-shadow: 0 5px 0 0 inset rgba(0,0,0,0.3);
+    background-color: rgb(215,55,59);
+    color:rgba(255,255,255,0.3);
+}
+
 
 .main-footer{
     display: flex;
@@ -512,6 +519,7 @@ background-color: rgb(239,200,74);
 .menu-references__item a:hover path{
     fill-opacity: 0.4;
 }
+
 
 .menu-references__item:hover{
     background-color: rgb(231,66,70);
@@ -594,11 +602,6 @@ background-color: rgb(239,200,74);
     font-weight: bold;
 }
 
-#area{
-    width:760px;
-    height: 118px;
-}
-
 .modal h2{
     font-size: 45px;
 }
@@ -611,7 +614,6 @@ background-color: rgb(239,200,74);
     right:100px;
     cursor:pointer;
 }
-
 .modal-close:after{
     content: " ";
     position:absolute;
@@ -632,7 +634,20 @@ background-color: rgb(239,200,74);
     transform:rotate(-45deg);
 }
 
+.modal-close:hover:before,
+.modal-close:hover:after{
+    background-color: rgba(254,204,205,0.6);
+}
+
+.modal-close:focus:before,
+.modal-close:focus:after{
+    background-color: rgba(255,255,255,0.6);
+}
+
+
+
 .modal-form__submit{
+    font-size:18px;
     width:260px;
     height: 50px;
     background-color: rgb(251,86,90);
@@ -640,9 +655,57 @@ background-color: rgb(239,200,74);
     text-transform: uppercase;
     font-weight: normal;
     color:white;
+    cursor:pointer;
+}
+
+.modal-form__submit:hover{
+    background-color: rgb(231,66,70);
+}
+
+.modal-form__submit:active{
+    background-color: rgb(215,55,59);
+    box-shadow: 0 5px 0 0 inset rgba(0,0,0,0.3);
+    color:rgba(255,255,255,0.3);
+}
+
+
+
+.form-textform textarea{
+    width:760px;
+    height:118px;
+}
+
+.form-textform textarea,
+.form-mail input,
+.form-name input{
+    border:1px solid rgb(215,220,222);
+}
+
+.form-textform textarea:hover,
+.form-mail input:hover,
+.form-name input:hover{
+    border:1px solid rgb(180,185,187);
+}
+
+.form-textform textarea:hover,
+.form-mail input:hover,
+.form-name input:hover{
+    border:1px solid rgb(180,185,187);
+}
+
+.form-textform textarea:focus,
+.form-mail input:focus,
+.form-name input:focus{
+    border:1px solid rgb(0,0,0);
 }
 
 /*---------------------------- catalog*/
+
+.catalog-header{
+    font-family: "Roboto",sans-serif;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
 
 .container{
     width:1456px;
@@ -669,6 +732,19 @@ background-color:rgb(238,238,238);
     border:none;
 }
 
+.aside-content__cost{}
+
+.border-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.aside-form__text--area{
+    min-width: 80px;
+}
+
 .aside-content__legend{
     font-size:18px;
     font-weight: bold;
@@ -692,6 +768,7 @@ background-color:rgb(238,238,238);
     height: 80px;
     background-color:rgb(238,238,238);
     outline: none;
+    margin-top: 55px;
 }
 
 .runer::-webkit-slider-thumb{
@@ -700,6 +777,7 @@ background-color:rgb(238,238,238);
     height: 23px;
     background: url('../svg/filter-button.svg');
     margin-top: -10px;
+    outline: none;
 }
 
 .runer::-webkit-slider-runnable-track{
@@ -707,6 +785,7 @@ background-color:rgb(238,238,238);
     height: 2px;
     background-color:rgb(0,202,116);
     cursor:pointer;
+    outline: none;
 }
 
 .runer::-moz-range-thumb{
@@ -727,7 +806,6 @@ background-color:rgb(238,238,238);
     padding-bottom: 15px;
     padding-top:63px;
 }
-
 
 .aside-form__span{
     display: inline-block;
@@ -888,6 +966,23 @@ input[type="checkbox"]{
     justify-content: space-between;
 }
 
+.section-range__arrows button{
+    background: transparent;
+    outline: none;
+}
+
+.traingular{
+    cursor:pointer;
+}
+
+.traingular:hover path{
+    fill:rgb(166,166,166);
+}
+
+.traingular:active path{
+    fill:rgb(35,31,32);
+}
+
 .section-content{
     min-width: inherit;
 }
@@ -951,7 +1046,7 @@ input[type="checkbox"]{
     margin-top: 20px;
 }
 
-.content-backside a{
+.content-backside__reference{
     display: block;
     font-size: 16px;
     line-height: 50px;
@@ -963,6 +1058,19 @@ input[type="checkbox"]{
     margin:auto;
     margin-top: 30px;
 }
+
+.content-backside__reference:hover{
+    background-color: rgb(231,66,70);
+}
+
+.content-backside__reference:active{
+    background-color:rgb(215,55,59);
+    box-shadow: 0 5px 0 0 inset rgba( 0,0,0, 0.3);
+}
+
+
+
+
 
 
 .section-content__picture:hover .content-backside{
