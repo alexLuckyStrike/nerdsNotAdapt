@@ -4,6 +4,25 @@
     box-sizing: border-box;
 }
 
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.contacts__title{
+
+}
+
 body{
 font-family: "Roboto",sans-serif;
 }
@@ -38,6 +57,10 @@ button{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 45px;
+}
+
+.header-navigator__logo{
+    display: block;
 }
 
 .header-navigator__logo:hover{
@@ -429,12 +452,20 @@ background-color: rgb(239,200,74);
     position: relative;
 }
 
+.contacts iframe{
+    width: 100%;
+}
+
 .contacts-wrapper{
     width: inherit;
     height: inherit;
     position: absolute;
     z-index:1;
     margin: auto;
+}
+
+.contacts-wrapper iframe{
+    width: 100%;
 }
 
 .contacts__write{
@@ -557,9 +588,9 @@ background-color: rgb(239,200,74);
     position: fixed;
     background: white;
     width:960px;
-    height: 590px;
+    min-height: 590px;
     z-index: 10;
-    bottom:180px;
+    bottom:10px;
     left:50%;
     transform: translateX(-50%);
     padding:60px 100px;
@@ -616,6 +647,7 @@ background-color: rgb(239,200,74);
     top:80px;
     right:100px;
     cursor:pointer;
+    background:transparent;
 }
 .modal-close:after{
     content: " ";
@@ -743,7 +775,8 @@ background-color:rgb(238,238,238);
 }
 
 .aside-form__text--area{
-    min-width: 80px;
+    width: 100px;
+    text-align: center;
 }
 
 .aside-content__legend{
@@ -863,7 +896,8 @@ input[type="range"]{
 }
 
 .check-input:checked + .check-radio{
-    background: url('../svg/radio-on.svg');
+    background: url('../svg/radio-off.svg'),
+            url('../svg/radio-on.svg');
 }
 
 
@@ -875,7 +909,9 @@ margin-left:25px;
     cursor:pointer;
 }
 
-.aside-content__table{}
+.aside-content__table{
+    mso-cellspacing: 5px;
+}
 
 .aside-content__table td{
     vertical-align: bottom;
@@ -915,7 +951,8 @@ input[type="checkbox"]{
 }
 
 .check__input:checked + .check__box{
-    background: url('../svg/checkbox-on.svg')no-repeat;
+    background:url('../svg/checkbox-off.svg') no-repeat,
+            url('../svg/checkbox-on.svg')no-repeat;
 }
 
 .catalog-content{
